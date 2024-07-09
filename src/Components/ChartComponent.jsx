@@ -1,25 +1,24 @@
 import { Chart as ChartJS } from "chart.js/auto";
 import { Bar, Line } from "react-chartjs-2";
 import "../App.css"
+import { useState } from "react";
 
 
-function Grafico(props){
+function ChartComponent({primo, secondo}){
 
-    console.log(props);
-    let etichette = props[0];
-    let dati = props[1];
-
+    
+    console.log(primo, secondo);
 
     return(
         <>
         <div className="chart">
                 <Bar
                     data={{
-                        labels: etichette,
+                        labels: primo,
                         datasets: [
                             {
-                                label: "revenue",
-                                data: dati
+                                label: "population",
+                                data: secondo
                             }
                         ]
                     }}>
@@ -34,4 +33,4 @@ function Grafico(props){
 
 }
 
-export default Grafico;
+export default ChartComponent;
