@@ -1,7 +1,9 @@
 import { Chart as ChartJS } from "chart.js/auto";
 import { Bar, Line } from "react-chartjs-2";
 import "../App.css"
-import { useState } from "react";
+// import { useState } from "react";
+// import React from 'react'
+
 
 
 function ChartComponent({primo, secondo}){

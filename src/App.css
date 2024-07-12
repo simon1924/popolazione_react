@@ -4,7 +4,16 @@ body{
   font-family: Arial;
 }
 
+/* .mainContainer{
+  display: flex;
+} */
+
 .contenitore{
+  display: flex-column;
+  
+}
+
+.mContainer{
   display: flex;
 }
 
@@ -12,7 +21,8 @@ body{
   width: 100%;
   margin: 20px;
   padding: 20px;
-  /* background-color:black; */
+  background-color:black;
+  overflow: hidden;
 }
 
 .card {
@@ -31,10 +41,35 @@ input{
 .Sidebar{
   max-height: 100vh;
   width: 300px;
-  background-color: green;
+  background-color: #808080;
   overflow: auto;
 }
 
 li{
   list-style-type: none;
+}
+
+h1{
+  text-align: center;
+}
+
+.myheader{
+  width: 100%;
+  height: 85px;
+  text-align: center;
+  background-color: pink;
+  
+  //margin: 10px;
+}
+
+.searchbox{
+  width: 300px;
+  height: 85px;
+  background-color: #696969;
+  text-align: center;
+  
+}
+
+.ricerca{
+  border-radius: 8px;
 }
