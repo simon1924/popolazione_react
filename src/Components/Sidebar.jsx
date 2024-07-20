@@ -1,83 +1,26 @@
 import "../App.css"
-import data from "../file/population_data.json";
 import ChartComponent from "./ChartComponent";
-import { useState } from "react";
-import SearchBox from "./SearchBox";
 
 
 
-// function filtro(array) {
-//     let nomiSingoli = [];
 
-//     array.forEach(item => {
-//         // console.log(item["Country Name"]);
-//         nomiSingoli.push(item["Country Name"]);
-//     })
-//     let unici = [... new Set(nomiSingoli)];
+function Sidebar({popolazioneFiltered, data, setDatiPerGrafico}) {
 
-//     // console.log(unici);
-//     return unici
-// }
-// let datas = filtro(data);
+    // let [popolazioneDati, setpopolazioneDati] = useState([]);
 
+    // function filtro(array) {
+    //     let nomiSingoli = [];
 
-// function ottieniDati(array, nome) {
+    //     array.forEach(item => {
+    //         // console.log(item["Country Name"]);
+    //         nomiSingoli.push(item["Country Name"]);
+    //     })
+    //     let unici = [... new Set(nomiSingoli)];
 
-//     let arrayPerGrafico = [];
-
-//     array.forEach(item => {
-//         if (item["Country Name"] == nome) {
-//             arrayPerGrafico.push(item);
-//         }
-//     });
-
-//     //console.log(arrayPerGrafico);
-//     let filtrato = filtroPerGrafico(arrayPerGrafico);
-//     //console.log(filtrato);
-//     return filtrato;
-
-// }
-
-// function filtroPerGrafico(array) {
-//     let labels = [], data = [];
-
-//     array.forEach(item => {
-//         labels.push(item["Year"]);
-//         data.push(item["Value"]);
-//     })
-
-//     return [labels, data];
-// }
-
-// let datiTemp;
-
-// const handleChange = (e) => {
-//     const { value } = e.target;
-//     datiTemp = ottieniDati(data, value);
-//     // alert(`${value}`);
-//     console.log(datiTemp);
-
-// };
-
-
-
-function Sidebar() {
-
-    let [popolazioneDati, setpopolazioneDati] = useState([]);
-
-    function filtro(array) {
-        let nomiSingoli = [];
-
-        array.forEach(item => {
-            // console.log(item["Country Name"]);
-            nomiSingoli.push(item["Country Name"]);
-        })
-        let unici = [... new Set(nomiSingoli)];
-
-        // console.log(unici);
-        return unici
-    }
-    let datas = filtro(data);
+    //     // console.log(unici);
+    //     return unici
+    // }
+    // let datas = filtro(data);
 
 
     function ottieniDati(array, nome) {
@@ -112,10 +55,11 @@ function Sidebar() {
     const handleChange = (e) => {
         //e.preventDefault();
         const { value } = e.target;
-        setpopolazioneDati(ottieniDati(data, value));
+        //setpopolazioneDati(ottieniDati(data, value));
         // alert(`${value}`);
         console.log("popolazioneDati")
-        console.log(popolazioneDati);
+        console.log(popolazioneFiltered);
+        setDatiPerGrafico(ottieniDati(data, value));
         //console.log("ciaoooo")
 
     };
@@ -125,14 +69,14 @@ function Sidebar() {
 
     return (
         <>
-            <div className="mContainer">
-                <div className="contenitore">
-                    <SearchBox paesi={data}></SearchBox>
+            {/* <div className="mContainer"> */}
+                
+                    {/* <SearchBox paesi={data}></SearchBox> */}
 
-                    <div className="Sidebar">
+                    <div className="sidebar">
                         <ul>
                             {
-                                datas.map(item => {
+                                popolazioneFiltered.map(item => {
                                     return (
                                         <>
                                             <li>
@@ -152,10 +96,10 @@ function Sidebar() {
 
 
 
-                </div>
-                <ChartComponent primo={popolazioneDati[0]} secondo={popolazioneDati[1]}></ChartComponent>
 
-            </div>
+                {/* <ChartComponent primo={popolazioneDati[0]} secondo={popolazioneDati[1]}></ChartComponent> */}
+
+            {/* </div> */}
 
 
 

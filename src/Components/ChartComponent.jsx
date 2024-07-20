@@ -6,21 +6,21 @@ import "../App.css"
 
 
 
-function ChartComponent({primo, secondo}){
+function ChartComponent({datiPerGrafico}){
 
     
-    console.log(primo, secondo);
+    //console.log(datiPerGrafico);
 
     return(
         <>
         <div className="chart">
                 <Bar
                     data={{
-                        labels: primo,
+                        labels: datiPerGrafico[0],
                         datasets: [
                             {
                                 label: "population",
-                                data: secondo
+                                data: datiPerGrafico[1]
                             }
                         ]
                     }}>
